@@ -15,7 +15,7 @@ import 'swiper/css/effect-coverflow'
 import services from '@/lib/fackdata/servicesDataOne'
 
 // Import service images
-import adhdImage from '@/assets/images/services/adhd2.png'
+import inventary from '@/assets/images/services/inventary.jpg'
 import autismImage from '@/assets/images/services/Asd.png'
 import behavioralImage from '@/assets/images/services/behavioral-disorders2.png'
 import cerebralPalsyImage from '@/assets/images/services/cerebral-disorders1.png'
@@ -34,9 +34,10 @@ const servicesData = [
         id: 1,
         title: "Early Intervention Programs",
         description: "Tailored therapy for infants and children.",
-        path: "/services/early-intervention",
-        image: adhdImage,
+        path: "/services/adhd",
+        image: inventary,
         color: "from-purple-500 to-purple-600",
+        alt: 'Early invention program fetchpriority="high" decoding="async" data-nimg="fill" class="object-cover  transition-transform duration-700" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/_next/static/media/service13.9fd9fe2a.png"',
     },
     {
         id: 2,
@@ -45,82 +46,17 @@ const servicesData = [
         path: "/services/skills-bridge-program",
         image: adolescentHealthImage,
         color: "from-cyan-500 to-cyan-600",
+        alt: 'Multidisciplinary Care fetchpriority="high" decoding="async" data-nimg="fill" class="object-cover  transition-transform duration-700" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/_next/static/media/service11.1f3f3f6e.png',
     },
     {
-        id: 7,
-        title: "Multidisciplinary Care",
-        description: "Collaborative planning with psychologists, therapists, educators, and medical specialists",
-        path: "/services/multidisciplinary-care",
-        image: antenatalSessionsImage,
-        color: "from-amber-500 to-amber-600",
-    },
-    {
-        id: 8,
-        title: "Learning Disabilities",
-        description: "Support for children with difficulties in reading, writing, math, reasoning, listening, and speaking - not related to intelligence or motivation.",
-        image: intellectualDisabilityImage,
-        color: "from-red-500 to-red-600",
-    },
-    {   id: 9,
-        title: "intellectual-disability",
-        description: "Assessment and support when there are limits to a person's ability to learn at an expected level and function in daily life.",
-        image: schoolReadinessImage,
-        color: "from-indigo-500 to-indigo-600",
-    },
-    {
-        id: 10,
-        title: "Cerebral Palsy",
-        description: "Therapies and interventions to improve movement, posture, and overall quality of life for children with cerebral palsy.",
-        image: cerebralPalsyImage,
-        color: "from-pink-500 to-pink-600",
-    },
-    {
-        id: 11,
-        title: "Behavioral Disorders",
-        description: "Strategies and therapies to manage behaviors associated with conditions like Oppositional Defiant Disorder (ODD) and Conduct Disorder (CD).",
-        image: behavioralImage,
-        color: "from-yellow-500 to-yellow-600",
-    },
-    {
-        id: 12,
-        title: "ADHD Management",
-        description: "Comprehensive support for children with Attention Deficit Hyperactivity Disorder (ADHD) including behavioral therapy and parent training.",
-        image: adhdImage,
-        color: "from-lime-500 to-lime-600",
+        id: 3,
+        title: "Developmental Screening & Assessments",
+        description: "Comprehensive evaluations to identify developmental delays.",
+        path: "/services/neurodevelopmental-support",
+        image: developmentalDelaysImage,
+        color: "from-green-500 to-green-600",
+        alt: '"Developmental Screening &amp; Assessments" fetchpriority="high" decoding="async" data-nimg="fill" class="object-cover  transition-transform duration-700" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/_next/static/media/developmental-delays2.513ef8f8.png"',
     }
-    // {
-    //     id: 3,
-    //     title: "Neurodevelopmental Support",
-    //     description: "Executive functioning, social skills, and emotional regulation for children and teens.",
-    //     path: "/services/neurodevelopmental-support",
-    //     image: autismImage,
-    //     color: "from-green-500 to-green-600",
-    // },
-    // {
-    //     id: 4,
-    //     title: "Learning Support & Educational Planning",
-    //     description: "Personalized strategies for academic success.",
-    //     path: "/services/learning-support",
-    //     image: learningDisabilitiesImage,
-    //     color: "from-orange-500 to-orange-600",
-    // },
-    // {
-    //     id: 5,
-    //     title: "Teen & Adolescent Transition Clinic",
-    //     description: "Preparing teens for school, vocational, and life transitions.",
-    //     path: "/services/teen-adolescent-transition",
-    //     image: teenTransitionImage,
-    //     color: "from-teal-500 to-teal-600",
-    // },
-    
-    // {
-    //     id: 7,
-    //     title: "Multidisciplinary Care",
-    //     description: "Collaborative planning with psychologists, therapists, educators, and medical specialists",
-    //     path: "/services/multidisciplinary-care",
-    //     image: antenatalSessionsImage,
-    //     color: "from-amber-500 to-amber-600",
-    // }
 ]
 
 const ServicesGrid = () => {
@@ -239,16 +175,16 @@ const ServicesGrid = () => {
                     }}
                     className="services-carousel pb-12 sm:pb-14 md:pb-16 px-1 sm:px-2"
                 >
-                    {servicesData.map(({ id, title, description, path, image, color, icon }) => (
+                    {servicesData.map(({ id, title, description, path, image, color, icon, alt }) => (
                         <SwiperSlide key={id}>
-                            <Link href={`/services/${id}`} className="group block h-full">
+                            {/* <Link href={`/services/${id}`} className="group block h-full"> */}
                                 <div className="bg-white rounded-2xl sm:rounded-3xl overflow-hidden h-full transition-all duration-500 hover:shadow-2xl shadow-lg border border-gray-100 hover:border-transparent relative">
 
                                     {/* Image Header */}
                                     <div className="relative w-full h-48 sm:h-70 md:h-56 overflow-hidden bg-gradient-to-br from-primary/10 to-orange-100">
                                         <Image
                                             src={image}
-                                            alt={title}
+                                            alt={alt}
                                             fill
                                             className="object-cover  transition-transform duration-700"
                                             priority
@@ -267,14 +203,14 @@ const ServicesGrid = () => {
                                         </p>
 
                                         {/* CTA Button */}
-                                        <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-200 group-hover:border-white/30 transition-colors duration-300">
+                                        {/* <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-200 group-hover:border-white/30 transition-colors duration-300">
                                             <span className="text-primary text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors">
                                               Read More
                                             </span>
                                             <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full bg-primary/10 group-hover:bg-white/20 flex items-center justify-center transition-all duration-300 group-hover:translate-x-2">
                                                 <span className="text-primary text-lg sm:text-xl font-bold transition-colors">→</span>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
 
                                     {/* Shine Effect */}
@@ -282,7 +218,7 @@ const ServicesGrid = () => {
                                         <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"></div>
                                     </div>
                                 </div>
-                            </Link>
+                            {/* </Link> */}
                         </SwiperSlide>
                     ))}
                 </Swiper>
